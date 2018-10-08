@@ -1,0 +1,15 @@
+[Unit]
+Description=Affiche les horaires des bus RATP
+After=network.target
+
+[Service]
+User=pi
+WorkingDirectory=/home/pi/ratp
+ExecStart=/home/pi/ratp/ratp.py
+StandardOutput=syslog
+StandardError=syslog
+SyslogIdentifier=ratp
+Restart=always
+
+[Install]
+WantedBy=multi-user.target
